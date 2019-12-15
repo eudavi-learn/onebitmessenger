@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-background-black-ter has-text-white-ter">
   <head>
     <title>OnebitMessenger</title>
     <%= csrf_meta_tags %>
@@ -12,6 +12,11 @@
     <%= render 'layouts/nav' %>
     <section class="section">
       <div class="container">
+        <% if alert %>
+          <div class="notification is-danger"><%= alert %></div>
+        <% elsif notice %>
+          <div class="notification is-success"><%= notice %></div>
+        <% end%>
         <%= yield %>
       </div>
     </section>
