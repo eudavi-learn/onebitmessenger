@@ -11,5 +11,14 @@ require("channels");
 import bulmaQuickview from "bulma-quickview/src/js";
 
 document.addEventListener("turbolinks:load", () => {
+  const fileInput = document.querySelectorAll("input[type=file].file-input");
+  fileInput.forEach(input => {
+    input.onchange = () => {
+      if (input.files.length > 0) {
+        const fileName = input.parentNode.querySelector(".file-name");
+        fileName.textContent = input.files[0].name;
+      }
+    };
+  });
   bulmaQuickview.attach();
 });
