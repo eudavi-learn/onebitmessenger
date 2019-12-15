@@ -1,0 +1,16 @@
+.navbar-burger.burger.desktop-burger {
+  display: block;
+}
+ 
+.sidebar-menu {
+  li {
+    padding: 0.7em;
+ 
+    a {
+      &:link, &:hover, &:visited, &:active {
+        text-decoration: none;
+        color: $white-ter;
+      }
+    }
+  }
+}
