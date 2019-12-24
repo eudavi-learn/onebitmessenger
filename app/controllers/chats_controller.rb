@@ -1,7 +1,9 @@
 class ChatsController < ApplicationController
   before_action :set_user
 
-  def show; end
+  def show
+    @messages = Message.user_messages(current_user, @user)
+  end
 
   private
   
